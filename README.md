@@ -1,13 +1,14 @@
 ## KindTap Platform Library for NodeJS
 
-#### This library currently supports generating a signed authorization header
-#### which is required to make requests to most of the KindTap Platform APIs.
+#### This library currently supports generating a signed authorization header which is required to make requests to KindTap Platform APIs.
 
 ### Installation
 
-`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.1.1`
+`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.1.2`
 
 ### Example using node-fetch
+
+#### Note that the `host` and `x-kt-date` headers are required.
 
 ```JavaScript
 import fetch from "node-fetch";
