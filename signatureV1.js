@@ -38,10 +38,10 @@ export const stringifyDate = (date, full=true) => {
 };
 
 const _buildCanonHeaders = (headers) => {
-  const h_pre = Object.keys(headers).map((k) => [ k.toLowerCase(), headers[k] ]);
+  const h_pre = Object.keys(headers).map((k) => [ k.toLowerCase(), `${headers[k]}`.trim() ]);
   h_pre.sort(sortByCodePoint);
   return h_pre.map(
-    (h) => `${h[0]}:${h[1].trim().replace(MULTI_WS_EXPR, ' ')}`
+    (h) => `${h[0]}:${h[1].replace(MULTI_WS_EXPR, ' ')}`
   ).join('\n') + '\n';
 };
 
@@ -50,7 +50,7 @@ const _buildCanonQuery = (params) => {
   p_pre.sort(sortByCodePoint);
   return p_pre.map((p) => {
     const p_key = encodeURIComponent(p[0]);
-    const p_value = encodeURIComponent(p[1].replace(EQUALS_EXPR, EQUALS_ENC));
+    const p_value = encodeURIComponent(`${p[1]}`.replace(EQUALS_EXPR, EQUALS_ENC));
     return `${p_key}=${p_value}`;
   }).join('&');
 };
