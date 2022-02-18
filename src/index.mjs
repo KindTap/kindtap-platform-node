@@ -1,7 +1,7 @@
 import {
   generateSignedAuthHeader,
   stringifyDate,
-} from './signatureV1.js';
+} from './signatureV1';
 
 export {
   generateSignedAuthHeader,

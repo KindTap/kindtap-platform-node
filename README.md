@@ -4,7 +4,7 @@
 
 ### Installation
 
-`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.1.3`
+`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.1.4`
 
 ### Example using node-fetch
 
