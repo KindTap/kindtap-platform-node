@@ -4,15 +4,22 @@
 
 ### Installation
 
-`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.1.6`
+`npm i --save https://github.com/KindTap/kindtap-platform-node.git#0.2.0`
 
 ### Example using node-fetch
 
-#### Note that the `host` and `x-kt-date` headers are required.
+#### Important Notes
+
+* the `host` and `x-kt-date` headers are required
+* request body must be a string that matches exactly the body of the HTTP request
 
 ```JavaScript
 import fetch from "node-fetch";
-import { generateSignedAuthHeader, stringifyDate } from "kindtap-platform-node";
+import {
+  generateSignedAuthHeader,
+  stringifyDate,
+} from "kindtap-platform-node";
+// require() also supported
 
 const host = 'kindtap-platform-host';
 const path = '/path/to/api/endpoint/';

@@ -37,17 +37,6 @@ export const stringifyDate = (date, full=true) => {
   return `${Y}${m}${d}T${H}${M}${S}Z`;
 };
 
-export const stringifyUTCDate = (date, full=true) => {
-  const Y = date.getFullYear();
-  const m = leftPad(date.getMonth() + 1);
-  const d = leftPad(date.getDate());
-  if (!full) return `${Y}${m}${d}`;
-  const H = leftPad(date.getHours());
-  const M = leftPad(date.getMinutes());
-  const S = leftPad(date.getSeconds());
-  return `${Y}${m}${d}T${H}${M}${S}Z`;
-};
-
 const _buildCanonHeaders = (headers) => {
   const h_pre = Object.keys(headers).map((k) => [ k.toLowerCase(), `${headers[k]}`.trim() ]);
   h_pre.sort(sortByCodePoint);
